@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ColofulMessage from "./components/ColorfulMessage";
 
 const App = () => {
   //ボタンをクリックした時の動作 アラートを表示
   const onClickButtton = () => alert();
 
+  //stateにカウントアップ
+  const onClickCountUp = () => {
+    setNum(num + 1);
+  };
+  //動的に更新されるnum,それを更新するsetNum
+  const [num, setNum] = useState(0);
   //複数タグをレンダリングする時は()を使って複数のタグを囲む
   //()の中身は一つのタグで囲まないといけない
   return (
@@ -13,6 +19,9 @@ const App = () => {
       <ColofulMessage color="blue">お元気ですか？</ColofulMessage>
       <ColofulMessage color="pink">元気ですよ。</ColofulMessage>
       <button onClick={onClickButtton}>ボタン</button>
+      <br />
+      <button onClick={onClickCountUp}>カウントアップ</button>
+      <p>{num}</p>
     </React.Fragment>
   );
 };
