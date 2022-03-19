@@ -1,18 +1,17 @@
 import React from "react";
+import ColofulMessage from "./components/ColorfulMessage";
 
 const App = () => {
   //ボタンをクリックした時の動作 アラートを表示
   const onClickButtton = () => alert();
-  const contentStyle = {
-    color: "blue",
-    fontSize: "18px"
-  };
+
   //複数タグをレンダリングする時は()を使って複数のタグを囲む
   //()の中身は一つのタグで囲まないといけない
   return (
     <React.Fragment>
       <h1 style={{ color: "red" }}>hello</h1>
-      <p style={contentStyle}>how are you?</p>
+      <ColofulMessage color="blue">お元気ですか？</ColofulMessage>
+      <ColofulMessage color="pink">元気ですよ。</ColofulMessage>
       <button onClick={onClickButtton}>ボタン</button>
     </React.Fragment>
   );
